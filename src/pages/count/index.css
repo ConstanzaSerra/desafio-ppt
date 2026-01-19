@@ -1,0 +1,26 @@
+body {
+  max-height: 1vh;
+  display: flex;
+  justify-content: center;
+}
+
+.count {
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+countdown-timer {
+  margin: 30px;
+}
+
+.plays {
+  margin: 100px 20px 20px 20px; /* Más margen arriba para bajar las manos */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Para separar las manos */
+}

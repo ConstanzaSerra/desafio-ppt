@@ -1,0 +1,10 @@
+.body{
+    margin: 0;
+}
+
+.plays-made{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 92vh; 
+}

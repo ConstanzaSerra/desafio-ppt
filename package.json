@@ -1,0 +1,14 @@
+{
+  "name": "58-desafio-ppt",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "parcel": "2"
+  },
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html --dist-dir build --public-url /desafio-ppt",
+    "deploy": "gh-pages -d build"
+  }
+}

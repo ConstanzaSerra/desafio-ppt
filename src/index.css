@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  position: relative;
+  z-index: 0;
+}
+
+/* Capa de fondo con opacidad */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/fondo.png');
+  background-repeat: repeat;
+  background-size: 70px 70px;
+  opacity: 0.3; /* Ajustar este valor según el efecto deseado */
+  z-index: -1;
+}
