@@ -49,7 +49,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
         </svg>
         <div class="number">${this.time}</div>
       </div>
-    `}}customElements.define("countdown-timer",e);let t={data:{currentGame:{computerPlay:"",myPlay:""},history:[]},setMove(e){let t=this.getState();t.currentGame.myPlay=e,console.log("Jugada desde el state: ",e),this.setComputerMove(),this.setState(t)},setComputerMove(){let e=["piedra","papel","tijera"],t=e[Math.floor(Math.random()*e.length)],a=this.getState();a.currentGame.computerPlay=t,console.log("Jugada de la maquina: ",t),this.setState(a),console.log("Estado luego de definir jugada de la máquina: ",a)},pushToHistory(e){let t=this.getState();t.history.push(e),this.setState(t)},result:(e,t)=>e===t?"draw":"tijera"===e&&"papel"===t||"piedra"===e&&"tijera"===t||"papel"===e&&"piedra"===t?"win":"lose",gamesWonByPlayer(){let e=0,t=0;return this.getState().history.forEach(a=>{"win"==this.result(a.myPlay,a.computerPlay)?e++:"lose"==this.result(a.myPlay,a.computerPlay)&&t++}),{countUsuario:e,countMaquina:t}},getState(){return this.data},setState(e){this.data=e}};var a={};a=import.meta.resolve("ey0wk");var s={};s=import.meta.resolve("hAkpW");var r={};r=import.meta.resolve("4k1oe");class l extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["play","dimmed","enlarged","clickable","rotate","size"]}attributeChangedCallback(e,t,a){("play"===e||"dimmed"===e||"enlarged"===e||"clickable"===e)&&this.render()}connectedCallback(){this.render()}render(){let e=this.getAttribute("play")||"piedra",t=this.hasAttribute("dimmed"),l=this.hasAttribute("enlarged"),i=this.hasAttribute("clickable"),o=this.getAttribute("scale")||"1.0",n=this.hasAttribute("rotate")?"rotate(180deg)":"rotate(0deg)",d={piedra:a,papel:s,tijera:r};this.shadow.innerHTML=`
+    `}}customElements.define("countdown-timer",e);let t={data:{currentGame:{computerPlay:"",myPlay:""},history:[]},setMove(e){let t=this.getState();t.currentGame.myPlay=e,console.log("Jugada desde el state: ",e),this.setComputerMove(),this.setState(t)},setComputerMove(){let e=["piedra","papel","tijera"],t=e[Math.floor(Math.random()*e.length)],a=this.getState();a.currentGame.computerPlay=t,console.log("Jugada de la maquina: ",t),this.setState(a),console.log("Estado luego de definir jugada de la máquina: ",a)},pushToHistory(e){let t=this.getState();t.history.push(e),this.setState(t)},result:(e,t)=>e===t?"draw":"tijera"===e&&"papel"===t||"piedra"===e&&"tijera"===t||"papel"===e&&"piedra"===t?"win":"lose",gamesWonByPlayer(){let e=0,t=0;return this.getState().history.forEach(a=>{"win"==this.result(a.myPlay,a.computerPlay)?e++:"lose"==this.result(a.myPlay,a.computerPlay)&&t++}),{countUsuario:e,countMaquina:t}},getState(){return this.data},setState(e){this.data=e}};var a={};a=import.meta.resolve("ey0wk");var s={};s=import.meta.resolve("hAkpW");var r={};r=import.meta.resolve("4k1oe");class l extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["play","dimmed","enlarged","clickable","rotate","size"]}attributeChangedCallback(e,t,a){("play"===e||"dimmed"===e||"enlarged"===e||"clickable"===e)&&this.render()}connectedCallback(){this.render()}render(){let e=this.getAttribute("play")||"piedra",t=this.hasAttribute("dimmed"),l=this.hasAttribute("enlarged"),o=this.hasAttribute("clickable"),i=this.getAttribute("scale")||"1.0",n=this.hasAttribute("rotate")?"rotate(180deg)":"rotate(0deg)",d={piedra:a,papel:s,tijera:r};this.shadow.innerHTML=`
       <style>
         .my-play {
           transition: all 0.3s ease;
@@ -78,7 +78,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
 
         img {
           
-          transform: scale(${o});
+          transform: scale(${i});
         }
           
       </style>
@@ -87,7 +87,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
       ${l?"enlarged":""} scale'> 
         <img src="${d[e]}" alt="${e}" class = "jugada"/>
       </div>
-    `,i&&this.addEventListener("click",()=>{this.shadow.querySelector(".jugada").style.transform="translateY(-50px)",this.dispatchEvent(new CustomEvent("play-selected",{detail:e,bubbles:!0}))})}}customElements.define("my-play",l);class i extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["width"]}connectedCallback(){this.render()}render(){let e=this.getAttribute("width")||"140px";this.shadow.innerHTML=`
+    `,o&&this.addEventListener("click",()=>{this.shadow.querySelector(".jugada").style.transform="translateY(-50px)",this.dispatchEvent(new CustomEvent("play-selected",{detail:e,bubbles:!0}))})}}customElements.define("my-play",l);class o extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["width"]}connectedCallback(){this.render()}render(){let e=this.getAttribute("width")||"140px";this.shadow.innerHTML=`
         <style>
             button {
                 background-color: #006CFC;                
@@ -113,7 +113,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
         <button>
            <slot></slot>
         </button>
-    `}}customElements.define("my-button",i);var o={};o=import.meta.resolve("bCZTE");var n={};n=import.meta.resolve("eZByL");var d={};d=import.meta.resolve("iwPDY");class c extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["result"]}connectedCallback(){this.render()}render(){let e=this.getAttribute("result");console.log("Resultado desde el custom element: ",e);let t={win:o,lose:n,draw:d};this.shadow.innerHTML=`
+    `}}customElements.define("my-button",o);var i={};i=import.meta.resolve("bCZTE");var n={};n=import.meta.resolve("eZByL");var d={};d=import.meta.resolve("iwPDY");class c extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.render()}static get observedAttributes(){return["result"]}connectedCallback(){this.render()}render(){let e=this.getAttribute("result");console.log("Resultado desde el custom element: ",e);let t={win:i,lose:n,draw:d};this.shadow.innerHTML=`
         <style>
             img{
                 width: 200px;       
@@ -179,5 +179,5 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
         <div class = "result-button">
           <my-button width = 200 >Volver a jugar</my-button>
         </div>
-    `;let i=l.querySelector("my-button");return i?.addEventListener("click",t=>{t.preventDefault(),document.body.style.backgroundColor="",e.goTo("/welcome")}),l}}];!function(e){function t(e){history.pushState({},"",e),a(e)}function a(a){for(let s of u)if(s.path.test(a)){let a=s.component({goTo:t});e.firstChild&&e.firstChild.remove(),e.appendChild(a)}}let s=function(){let e=window.location.pathname,t="/desafio-ppt";if(e.startsWith(t))return e.replace(t,"")||"/"}();a(s),window.onpopstate=()=>{a(s)}}(document.querySelector(".root"));
-//# sourceMappingURL=58-desafio-ppt.06d82d91.js.map
+    `;let o=l.querySelector("my-button");return o?.addEventListener("click",t=>{t.preventDefault(),document.body.style.backgroundColor="",e.goTo("/welcome")}),l}}];!function(e){let t,a;function s(e){history.pushState({},"",e),r(e)}function r(t){for(let a of(console.log("Handling route:",t),u))if(a.path.test(t)){let t=a.component({goTo:s});e.firstChild&&e.firstChild.remove(),e.appendChild(t)}console.warn("No route found for:",t)}let l=(t=window.location.pathname,a="/desafio-ppt",t.startsWith(a)?t.replace(a,"")||"/":t||"/");r(l),window.onpopstate=()=>{r(l)}}(document.querySelector(".root"));
+//# sourceMappingURL=58-desafio-ppt.8cfdabf1.js.map
