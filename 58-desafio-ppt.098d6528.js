@@ -122,7 +122,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
 
         </style>
             <img src="${t[e]}" alt="${e}" class = "img-result"/>
-    `}}customElements.define("my-star",c);let u=[{path:/\/welcome/,component:function(e){let t=document.createElement("div");t.innerHTML=`
+    `}}function u(e){let t=document.createElement("div");t.innerHTML=`
     <div class = "welcome">
         <div class = "text">Piedra Papel <span>\xf3</span> Tijera
         </div>
@@ -133,7 +133,7 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
           <my-play play="tijera"></my-play>
         </div>    
     </div>    
-  `;let a=t.querySelector("my-button");return a?.addEventListener("click",t=>{t.preventDefault(),e.goTo("/play")}),t}},{path:/\/play/,component:function(e){let t=document.createElement("div");t.innerHTML=`
+  `;let a=t.querySelector("my-button");return a?.addEventListener("click",t=>{t.preventDefault(),e.goTo("/play")}),t}customElements.define("my-star",c);let m=[{path:/\//,component:u},{path:/\/welcome/,component:u},{path:/\/play/,component:function(e){let t=document.createElement("div");t.innerHTML=`
     <div class = "play">
         <div class = "textPlay">Presion\xe1 jugar
         y eleg\xed: piedra, papel o tijera antes 
@@ -179,5 +179,5 @@ class e extends HTMLElement{static get observedAttributes(){return["time"]}const
         <div class = "result-button">
           <my-button width = 200 >Volver a jugar</my-button>
         </div>
-    `;let o=l.querySelector("my-button");return o?.addEventListener("click",t=>{t.preventDefault(),document.body.style.backgroundColor="",e.goTo("/welcome")}),l}}];!function(e){let t,a;function s(e){history.pushState({},"",e),r(e)}function r(t){for(let a of(console.log("Handling route:",t),u))if(a.path.test(t)){let t=a.component({goTo:s});e.firstChild&&e.firstChild.remove(),e.appendChild(t)}console.warn("No route found for:",t)}let l=(t=window.location.pathname,a="/desafio-ppt",t.startsWith(a)?t.replace(a,"")||"/":t||"/");r(l),window.onpopstate=()=>{r(l)}}(document.querySelector(".root"));
-//# sourceMappingURL=58-desafio-ppt.8cfdabf1.js.map
+    `;let o=l.querySelector("my-button");return o?.addEventListener("click",t=>{t.preventDefault(),document.body.style.backgroundColor="",e.goTo("/welcome")}),l}}];!function(e){let t,a;function s(e){history.pushState({},"",e),r(e)}function r(t){for(let a of(console.log("Handling route:",t),m))if(a.path.test(t)){let t=a.component({goTo:s});e.firstChild&&e.firstChild.remove(),e.appendChild(t)}console.warn("No route found for:",t)}let l=(t=window.location.pathname,a="/desafio-ppt",t.startsWith(a)?t.replace(a,"")||"/":t||"/");r(l),window.onpopstate=()=>{r(l)}}(document.querySelector(".root"));
+//# sourceMappingURL=58-desafio-ppt.098d6528.js.map
