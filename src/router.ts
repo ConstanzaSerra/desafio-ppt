@@ -6,6 +6,10 @@ import { initWelcome } from "./pages/welcome/index";
 
 const routes = [
   {
+    path: /\//,
+    component: initWelcome,
+  },
+    {
     path: /\/welcome/,
     component: initWelcome,
   },
