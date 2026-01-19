@@ -13,7 +13,7 @@ const routes = [
     path: /\/play/,
     component: initPlay,
   },
-{
+  {
     path: /\/count/,
     component: initCount,
   },
@@ -21,11 +21,10 @@ const routes = [
     path: /\/showplay/,
     component: initShowPlay,
   },
-    {
+  {
     path: /\/result/,
     component: initShowResult,
   },
-
 ];
 
 export function initRouter(container: Element) {
@@ -35,6 +34,7 @@ export function initRouter(container: Element) {
   }
 
   function handleRoute(route) {
+    console.log("Handling route:", route); 
     for (const r of routes) {
       if (r.path.test(route)) {
         const el = r.component({ goTo });
@@ -42,9 +42,11 @@ export function initRouter(container: Element) {
         container.appendChild(el);
       }
     }
+
+    console.warn("No route found for:", route); // Agregar esto para ver si no se encuentra la ruta
   }
 
-  const initialPath = getCleanPathFromURL();//location.pathname === "/" ? "/welcome" : location.pathname;
+  const initialPath = getCleanPathFromURL(); //location.pathname === "/" ? "/welcome" : location.pathname;
 
   // Llamar al inicio con la ruta actual
   handleRoute(initialPath);
@@ -57,16 +59,17 @@ export function initRouter(container: Element) {
   return { goTo };
 }
 
-
 function getCleanPathFromURL() {
   // lógica para obtener el path de la URL y limpiarlo
   const fullPath = window.location.pathname;
-  
+
   //Define el basepath segun el entorno
-  const basepath = '/desafio-ppt'; //Cambia esto segun el entorno
+  const basepath = "/desafio-ppt"; //Cambia esto segun el entorno
 
   //Verifica si el fullPath comienza con el basePath
-  if(fullPath.startsWith(basepath)) {
-    return fullPath.replace(basepath, '') || '/'; //Devuelve '/' si el path queda vacío
+  if (fullPath.startsWith(basepath)) {
+    return fullPath.replace(basepath, "") || "/"; //Devuelve '/' si el path queda vacío
   }
+
+  return fullPath || "/";
 }
